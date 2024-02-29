@@ -46,19 +46,19 @@ async def _help(ult):
                 output = f"**Plugin** - `{plug}`\n"
                 for i in HELP["Official"][plug]:
                     output += i
-                output += "\n© @TeamUltroid"
+                output += "\n© @TeamAllBots"
                 await ult.eor(output)
             elif HELP.get("Addons") and plug in HELP["Addons"]:
                 output = f"**Plugin** - `{plug}`\n"
                 for i in HELP["Addons"][plug]:
                     output += i
-                output += "\n© @TeamUltroid"
+                output += "\n© @TeamAllBots"
                 await ult.eor(output)
             elif HELP.get("VCBot") and plug in HELP["VCBot"]:
                 output = f"**Plugin** - `{plug}`\n"
                 for i in HELP["VCBot"][plug]:
                     output += i
-                output += "\n© @TeamUltroid"
+                output += "\n© @TeamAllBots"
                 await ult.eor(output)
             else:
                 try:
@@ -66,7 +66,7 @@ async def _help(ult):
                     for d in LIST[plug]:
                         x += HNDLR + d
                         x += "\n"
-                    x += "\n© @TeamUltroid"
+                    x += "\n© @TeamAllBots"
                     await ult.eor(x)
                 except BaseException:
                     file = None
@@ -101,7 +101,7 @@ async def _help(ult):
                     elif HELP.get("VCBot") and file in HELP["VCBot"]:
                         for i in HELP["VCBot"][file]:
                             output += i
-                    output += "\n© @TeamUltroid"
+                    output += "\n© @TeamAllBots"
                     await ult.eor(output)
         except BaseException as er:
             LOGS.exception(er)
@@ -115,7 +115,7 @@ async def _help(ult):
                 z.extend(x)
             cmd = len(z) + 10
             if udB.get_key("MANAGER") and udB.get_key("DUAL_HNDLR") == "/":
-                _main_help_menu[2:3] = [[Button.inline("• Manager Help •", "mngbtn")]]
+                _main_help_menu[2:3] = [[Button.inline(" Manager Help ", "mngbtn")]]
             return await ult.reply(
                 get_string("inline_4").format(
                     OWNER_NAME,
