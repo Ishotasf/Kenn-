@@ -50,8 +50,8 @@ upage = 0
 
 SUP_BUTTONS = [
     [
-        Button.url("• Repo •", url="https://github.com/TeamUltroid/Ultroid"),
-        Button.url("• Support •", url="t.me/UltroidSupportChat"),
+        Button.url("**Owner**", url="https://t.me/KennXyourself"),
+        Button.url("**Support**", url="t.me/TeamAllBots/30"),
     ],
 ]
 
@@ -60,10 +60,10 @@ SUP_BUTTONS = [
 
 @in_pattern(owner=True, func=lambda x: not x.text)
 async def inline_alive(o):
-    TLINK = inline_pic() or "https://graph.org/file/74d6259983e0642923fdb.jpg"
-    MSG = "• **Ultroid Userbot •**"
+    TLINK = inline_pic() or "https://telegra.ph/file/6cb062ab163558ae79610.jpg"
+    MSG = "**Kenn Userbot**"
     WEB0 = InputWebDocument(
-        "https://graph.org/file/acd4f5d61369f74c5e7a7.jpg", 0, "image/jpg", []
+        "https://telegra.ph/file/6cb062ab163558ae79610.jpg", 0, "image/jpg", []
     )
     RES = [
         await o.builder.article(
@@ -71,7 +71,7 @@ async def inline_alive(o):
             text=MSG,
             include_media=True,
             buttons=SUP_BUTTONS,
-            title="Ultroid Userbot",
+            title="Kenn Userbot",
             description="Userbot | Telethon",
             url=TLINK,
             thumb=WEB0,
@@ -146,14 +146,14 @@ async def setting(event):
         link_preview=False,
         buttons=[
             [
-                Button.inline("•Pɪɴɢ•", data="pkng"),
-                Button.inline("•Uᴘᴛɪᴍᴇ•", data="upp"),
+                Button.inline("🏓 Pɪɴɢ", data="pkng"),
+                Button.inline("Uᴘᴛɪᴍᴇ ⏳", data="upp"),
             ],
             [
-                Button.inline("•Stats•", data="alive"),
-                Button.inline("•Uᴘᴅᴀᴛᴇ•", data="doupdate"),
+                Button.inline("📊 Stats", data="alive"),
+                Button.inline("Uᴘᴅᴀᴛᴇ 🗂", data="doupdate"),
             ],
-            [Button.inline("« Bᴀᴄᴋ", data="open")],
+            [Button.inline("◁ Bᴀᴄᴋ", data="open")],
         ],
     )
 
@@ -195,7 +195,7 @@ async def uptd_plugin(event):
                 help_ += "\n"
     if not help_:
         help_ = f"{file} has no Detailed Help!"
-    help_ += "\n© @TeamUltroid"
+    help_ += "\n© @TeamAllBots"
     buttons = []
     if inline_pic():
         data = f"sndplug_{key}_{file}"
@@ -204,7 +204,7 @@ async def uptd_plugin(event):
         buttons.append(
             [
                 Button.inline(
-                    "« Sᴇɴᴅ Pʟᴜɢɪɴ »",
+                    "▢ Sᴇɴᴅ Pʟᴜɢɪɴ ▢",
                     data=data,
                 )
             ]
@@ -214,7 +214,7 @@ async def uptd_plugin(event):
         data += f"|{index}"
     buttons.append(
         [
-            Button.inline("« Bᴀᴄᴋ", data=data),
+            Button.inline("◁ Bᴀᴄᴋ", data=data),
         ]
     )
     try:
@@ -244,8 +244,8 @@ async def _(event):
             get_string("upd_5"),
             file="ultroid_updates.txt",
             buttons=[
-                [Button.inline("• Uᴘᴅᴀᴛᴇ Nᴏᴡ •", data="updatenow")],
-                [Button.inline("« Bᴀᴄᴋ", data="ownr")],
+                [Button.inline("Uᴘᴅᴀᴛᴇ Nᴏᴡ", data="updatenow")],
+                [Button.inline("◁ Bᴀᴄᴋ", data="ownr")],
             ],
         )
         remove("ultroid_updates.txt")
@@ -254,7 +254,7 @@ async def _(event):
             changelog_str,
             buttons=[
                 [Button.inline("Update Now", data="updatenow")],
-                [Button.inline("« Bᴀᴄᴋ", data="ownr")],
+                [Button.inline("◁ Bᴀᴄᴋ", data="ownr")],
             ],
             parse_mode="html",
         )
@@ -265,14 +265,14 @@ async def _(event):
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds
-    pin = f"🌋Pɪɴɢ = {ms} microseconds"
+    pin = f"🏓 Pɪɴɢ = {ms} microseconds"
     await event.answer(pin, cache_time=0, alert=True)
 
 
 @callback(data="upp", owner=True)
 async def _(event):
     uptime = time_formatter((time.time() - start_time) * 1000)
-    pin = f"🙋Uᴘᴛɪᴍᴇ = {uptime}"
+    pin = f"⏳ Uᴘᴛɪᴍᴇ = {uptime}"
     await event.answer(pin, cache_time=0, alert=True)
 
 
@@ -287,7 +287,7 @@ async def _(e):
     button = InButtons.copy()
     button.append(
         [
-            Button.inline("« Bᴀᴄᴋ", data="open"),
+            Button.inline("◁ Bᴀᴄᴋ", data="open"),
         ],
     )
     await e.edit(buttons=button, link_preview=False)
@@ -335,17 +335,17 @@ def page_num(index, key):
         new_ = fl_[0] if fl_ else []
         index = 0
     if index == 0 and len(fl_) == 1:
-        new_.append([Button.inline("« Bᴀᴄᴋ »", data="open")])
+        new_.append([Button.inline("Bᴀᴄᴋ", data="open")])
     else:
         new_.append(
             [
                 Button.inline(
-                    "« Pʀᴇᴠɪᴏᴜs",
+                    "◁ Pʀᴇᴠɪᴏᴜs",
                     data=f"uh_{key}_{index-1}",
                 ),
-                Button.inline("« Bᴀᴄᴋ »", data="open"),
+                Button.inline("Bᴀᴄᴋ", data="open"),
                 Button.inline(
-                    "Nᴇxᴛ »",
+                    "Nᴇxᴛ ▷",
                     data=f"uh_{key}_{index+1}",
                 ),
             ]
@@ -398,9 +398,9 @@ async def ibuild(e):
                     results = [
                         await builder.document(
                             _pic,
-                            title="Ultroid Op",
+                            title="Ubot Op",
                             text=txt,
-                            description="@TeamUltroid",
+                            description="@TeamAllBots",
                             buttons=btn,
                             link_preview=False,
                         )
@@ -413,10 +413,10 @@ async def ibuild(e):
                     cont = InputWebDocument(pic, 0, mime_type, [])
                 results = [
                     await builder.article(
-                        title="Ultroid Op",
+                        title="Ubot Op",
                         type=_type,
                         text=txt,
-                        description="@TeamUltroid",
+                        description="@TeamAllBots",
                         include_media=include_media,
                         buttons=btn,
                         thumb=cont,
