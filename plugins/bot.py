@@ -70,21 +70,21 @@ def ULTPIC():
 
 buttons = [
     [
-        Button.url(get_string("bot_3"), "https://github.com/TeamUltroid/Ultroid"),
-        Button.url(get_string("bot_4"), "t.me/UltroidSupportChat"),
+        Button.url(get_string("bot_3"), "https://t.me/KennXyourself"),
+        Button.url(get_string("bot_4"), "t.me/TeamAllBots"),
     ]
 ]
 
 # Will move to strings
 alive_txt = """
-The Ultroid Userbot
+The Kenn Userbot
 
-  ◍ Version - {}
-  ◍ Py-Ultroid - {}
-  ◍ Telethon - {}
+  ➻ Version - {}
+  ➻ Py-RynUbot - {}
+  ➻ Telethon - {}
 """
 
-in_alive = "{}\n\n🌀 <b>Ultroid Version -><b> <code>{}</code>\n🌀 <b>PyUltroid -></b> <code>{}</code>\n🌀 <b>Python -></b> <code>{}</code>\n🌀 <b>Uptime -></b> <code>{}</code>\n🌀 <b>Branch -></b>[ {} ]\n\n• <b>Join @TeamUltroid</b>"
+in_alive = "{}\n\n➻ <b>RynUserbot Version -><b> <code>{}</code>\n➻ <b>PyRynUbot -></b> <code>{}</code>\n➻ <b>Python -></b> <code>{}</code>\n➻ <b>Uptime -></b> <code>{}</code>\n➻ <b>Branch -></b>[ {} ]\n\n▢ <b>Join @TeamAllBots</b>"
 
 
 @callback("alive")
@@ -130,7 +130,7 @@ async def lol(ult):
         )
 
         if _e := udB.get_key("ALIVE_EMOJI"):
-            als = als.replace("🌀", _e)
+            als = als.replace("⚜️", _e)
     else:
         parse = "md"
         als = (get_string("alive_1")).format(
@@ -145,7 +145,7 @@ async def lol(ult):
         )
 
         if a := udB.get_key("ALIVE_EMOJI"):
-            als = als.replace("✵", a)
+            als = als.replace("💠", a)
     if pic:
         try:
             await ult.reply(
@@ -272,7 +272,7 @@ async def inline_alive(ult):
     )
 
     if _e := udB.get_key("ALIVE_EMOJI"):
-        als = als.replace("🌀", _e)
+        als = als.replace("⚜️", _e)
     builder = ult.builder
     if pic:
         try:
@@ -292,7 +292,7 @@ async def inline_alive(ult):
                     await builder.document(
                         pic,
                         title="Inline Alive",
-                        description="@TeamUltroid",
+                        description="@TeamAllBots",
                         parse_mode="html",
                         buttons=buttons,
                     )
